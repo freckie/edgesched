@@ -48,9 +48,9 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 	var nodeLabel string
 	var score float64
 	klog.Infof("[EdgeScoring] Started to edge-node-scoring process")
-	klog.Infof("[EdgeScoring] alpha = \".3f\"", alpha)
-	klog.Infof("[EdgeScoring] theta2 = \".3f\"", theta2)
-	klog.Infof("[EdgeScoring] theta1 = \".3f\"", theta1)
+	klog.Infof("[EdgeScoring] alpha = \"%.3f\"", alpha)
+	klog.Infof("[EdgeScoring] theta2 = \"%.3f\"", theta2)
+	klog.Infof("[EdgeScoring] theta1 = \"%.3f\"", theta1)
 
 	// getting pod labels
 	labels := p.ObjectMeta.Labels
@@ -70,8 +70,8 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 	if err != nil {
 		return 0, framework.NewStatus(framework.Error, "expected float64 value for \"mem-request\".")
 	}
-	klog.Infof("[EdgeScoring] R_cpu = \".5f\"", cpuRequest)
-	klog.Infof("[EdgeScoring] R_mem = \".5f\"", memRequest)
+	klog.Infof("[EdgeScoring] R_cpu = \"%.5f\"", cpuRequest)
+	klog.Infof("[EdgeScoring] R_mem = \"%.5f\"", memRequest)
 
 	// getting node metric
 	metric, err := s.conn.GetEdgeMetric(nodeName)
@@ -95,7 +95,7 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 	}
 
 	klog.Infof("[EdgeScoring] node \"%s\" label \"%s\"", nodeName, nodeLabel)
-	klog.Infof("[EdgeScoring] node \"%s\" score \"%d\"", nodeName, score)
+	klog.Infof("[EdgeScoring] node \"%s\" score \"%d\"", nodeName, int64(score*100))
 	return int64(score * 100), nil
 }
 
