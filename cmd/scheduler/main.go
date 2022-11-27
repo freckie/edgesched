@@ -17,20 +17,11 @@ limitations under the License.
 package main
 
 import (
+	"github.com/freckie/edgesched/pkg/edgescoring"
 	"os"
 
 	"k8s.io/component-base/cli"
 	"k8s.io/kubernetes/cmd/kube-scheduler/app"
-
-	"github.com/freckie/edgesched/pkg/capacityscheduling"
-	"github.com/freckie/edgesched/pkg/coscheduling"
-	"github.com/freckie/edgesched/pkg/noderesources"
-	"github.com/freckie/edgesched/pkg/noderesourcetopology"
-	"github.com/freckie/edgesched/pkg/podstate"
-	"github.com/freckie/edgesched/pkg/preemptiontoleration"
-	"github.com/freckie/edgesched/pkg/qos"
-	"github.com/freckie/edgesched/pkg/trimaran/loadvariationriskbalancing"
-	"github.com/freckie/edgesched/pkg/trimaran/targetloadpacking"
 
 	// Ensure scheme package is initialized.
 	_ "github.com/freckie/edgesched/apis/config/scheme"
@@ -41,17 +32,18 @@ func main() {
 	// Later they can consist of scheduler profile(s) and hence
 	// used by various kinds of workloads.
 	command := app.NewSchedulerCommand(
-		app.WithPlugin(capacityscheduling.Name, capacityscheduling.New),
-		app.WithPlugin(coscheduling.Name, coscheduling.New),
-		app.WithPlugin(loadvariationriskbalancing.Name, loadvariationriskbalancing.New),
-		app.WithPlugin(noderesources.AllocatableName, noderesources.NewAllocatable),
-		app.WithPlugin(noderesourcetopology.Name, noderesourcetopology.New),
-		app.WithPlugin(preemptiontoleration.Name, preemptiontoleration.New),
-		app.WithPlugin(targetloadpacking.Name, targetloadpacking.New),
-		// Sample plugins below.
-		// app.WithPlugin(crossnodepreemption.Name, crossnodepreemption.New),
-		app.WithPlugin(podstate.Name, podstate.New),
-		app.WithPlugin(qos.Name, qos.New),
+		//app.WithPlugin(capacityscheduling.Name, capacityscheduling.New),
+		//app.WithPlugin(coscheduling.Name, coscheduling.New),
+		//app.WithPlugin(loadvariationriskbalancing.Name, loadvariationriskbalancing.New),
+		//app.WithPlugin(noderesources.AllocatableName, noderesources.NewAllocatable),
+		//app.WithPlugin(noderesourcetopology.Name, noderesourcetopology.New),
+		//app.WithPlugin(preemptiontoleration.Name, preemptiontoleration.New),
+		//app.WithPlugin(targetloadpacking.Name, targetloadpacking.New),
+		//// Sample plugins below.
+		//// app.WithPlugin(crossnodepreemption.Name, crossnodepreemption.New),
+		//app.WithPlugin(podstate.Name, podstate.New),
+		//app.WithPlugin(qos.Name, qos.New),
+		app.WithPlugin(edgescoring.Name, edgescoring.New),
 	)
 
 	code := cli.Run(command)
