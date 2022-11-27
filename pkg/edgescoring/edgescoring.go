@@ -70,8 +70,8 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 	if err != nil {
 		return 0, framework.NewStatus(framework.Error, "expected float64 value for \"mem-request\".")
 	}
-	klog.Infof("[EdgeScoring] R_cpu = \"%.5f\"", cpuRequest)
-	klog.Infof("[EdgeScoring] R_mem = \"%.5f\"", memRequest)
+	klog.Infof("[EdgeScoring] R_cpu = \"%.2f\"", cpuRequest)
+	klog.Infof("[EdgeScoring] R_mem = \"%.2f\"", memRequest)
 
 	// getting node metric
 	metric, err := s.conn.GetEdgeMetric(nodeName)
@@ -95,7 +95,7 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 	}
 
 	klog.Infof("[EdgeScoring] node \"%s\" label \"%s\"", nodeName, nodeLabel)
-	klog.Infof("[EdgeScoring] node \"%s\" score \"%d\"", nodeName, int64(score*100))
+	klog.Infof("[EdgeScoring] node \"%s\" (before-normalized)score \"%f\"", nodeName, score)
 	return int64(score * 100), nil
 }
 
