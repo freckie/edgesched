@@ -91,11 +91,15 @@ func (s *EdgeScoring) Score(ctx context.Context, state *framework.CycleState, p 
 		score = 0
 	} else {
 		nodeLabel = "schedulable"
-		score = 1 - (alpha*(metric.CPUFuture+cpuRequest) - (1-alpha)*(metric.MemFuture+memRequest))
+		score = 1 - (alpha * (metric.CPUFuture + cpuRequest)) - (1-alpha)*(metric.MemFuture+memRequest)
+		klog.Infof("[EdgeScoring] before-normalized score \"%f\"", score)
+	}
+	if score < 0 {
+		score = 0
 	}
 
 	klog.Infof("[EdgeScoring] node \"%s\" label \"%s\"", nodeName, nodeLabel)
-	klog.Infof("[EdgeScoring] node \"%s\" (before-normalized)score \"%f\"", nodeName, score)
+	klog.Infof("[EdgeScoring] node \"%s\" final score \"%f\"", nodeName, int64(score*100))
 	return int64(score * 100), nil
 }
 
