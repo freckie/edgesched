@@ -21,7 +21,7 @@ package fake
 import (
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned/typed/scheduling/v1alpha1"
+	v1alpha1 "github.com/freckie/edgesched/pkg/generated/clientset/versioned/typed/scheduling/v1alpha1"
 )
 
 type FakeSchedulingV1alpha1 struct {

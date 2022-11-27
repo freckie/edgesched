@@ -19,8 +19,8 @@ limitations under the License.
 package scheduling
 
 import (
-	internalinterfaces "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/internalinterfaces"
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/scheduling/v1alpha1"
+	internalinterfaces "github.com/freckie/edgesched/pkg/generated/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/freckie/edgesched/pkg/generated/informers/externalversions/scheduling/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.

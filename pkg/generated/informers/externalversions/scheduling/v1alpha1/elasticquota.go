@@ -26,10 +26,10 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
-	schedulingv1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	versioned "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	internalinterfaces "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/internalinterfaces"
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/pkg/generated/listers/scheduling/v1alpha1"
+	schedulingv1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	versioned "github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/freckie/edgesched/pkg/generated/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/freckie/edgesched/pkg/generated/listers/scheduling/v1alpha1"
 )
 
 // ElasticQuotaInformer provides access to a shared informer and lister for

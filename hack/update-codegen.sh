@@ -29,18 +29,21 @@ CONTROLLER_GEN=${TOOLS_BIN_DIR}/${CONTROLLER_GEN_BIN}-${CONTROLLER_GEN_VER}
 # Need v1 to support defaults in CRDs, unfortunately limiting us to k8s 1.16+
 CRD_OPTIONS="crd:crdVersions=v1"
 
+MODULE_NAME="github.com/freckie/edgesched"
+
 GOBIN=${TOOLS_BIN_DIR} ${GO_INSTALL} sigs.k8s.io/controller-tools/cmd/controller-gen ${CONTROLLER_GEN_BIN} ${CONTROLLER_GEN_VER}
 
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd "${SCRIPT_ROOT}"; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
 
 bash "${CODEGEN_PKG}"/generate-internal-groups.sh \
   "deepcopy,conversion,defaulter" \
-  sigs.k8s.io/scheduler-plugins/pkg/generated \
-  sigs.k8s.io/scheduler-plugins/apis \
-  sigs.k8s.io/scheduler-plugins/apis \
+  "${MODULE_NAME}"/pkg/generated \
+  "${MODULE_NAME}"/apis \
+  "${MODULE_NAME}"/apis \
   "config:v1beta2,v1beta3" \
-  --go-header-file "${SCRIPT_ROOT}"/hack/boilerplate/boilerplate.generatego.txt
-
+  --go-header-file "${SCRIPT_ROOT}"/hack/boilerplate/boilerplate.generatego.txt \
+  --output-base "${SCRIPT_ROOT}" \
+  --trim-path-prefix "${MODULE_NAME}"
 
 ${CONTROLLER_GEN} object:headerFile="hack/boilerplate/boilerplate.generatego.txt" \
 paths="./apis/scheduling/..."

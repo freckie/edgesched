@@ -42,12 +42,12 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/metrics"
 	schedutil "k8s.io/kubernetes/pkg/scheduler/util"
 
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling"
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	schedinformer "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions"
-	externalv1alpha1 "sigs.k8s.io/scheduler-plugins/pkg/generated/listers/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/util"
+	"github.com/freckie/edgesched/apis/scheduling"
+	"github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	schedinformer "github.com/freckie/edgesched/pkg/generated/informers/externalversions"
+	externalv1alpha1 "github.com/freckie/edgesched/pkg/generated/listers/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/util"
 )
 
 // CapacityScheduling is a plugin that implements the mechanism of capacity scheduling.
@@ -814,20 +814,21 @@ func getPodDisruptionBudgets(pdbLister policylisters.PodDisruptionBudgetLister) 
 // Example:
 //
 // Pod:
-//   InitContainers
-//     IC1:
-//       CPU: 2
-//       Memory: 1G
-//     IC2:
-//       CPU: 2
-//       Memory: 3G
-//   Containers
-//     C1:
-//       CPU: 2
-//       Memory: 1G
-//     C2:
-//       CPU: 1
-//       Memory: 1G
+//
+//	InitContainers
+//	  IC1:
+//	    CPU: 2
+//	    Memory: 1G
+//	  IC2:
+//	    CPU: 2
+//	    Memory: 3G
+//	Containers
+//	  C1:
+//	    CPU: 2
+//	    Memory: 1G
+//	  C2:
+//	    CPU: 1
+//	    Memory: 1G
 //
 // Result: CPU: 3, Memory: 3G
 func computePodResourceRequest(pod *v1.Pod) *framework.Resource {

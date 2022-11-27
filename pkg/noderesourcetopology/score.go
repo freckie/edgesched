@@ -22,14 +22,14 @@ import (
 
 	"gonum.org/v1/gonum/stat"
 
+	apiconfig "github.com/freckie/edgesched/apis/config"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/klog/v2"
 	v1qos "k8s.io/kubernetes/pkg/apis/core/v1/helper/qos"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
-	apiconfig "sigs.k8s.io/scheduler-plugins/apis/config"
 
+	"github.com/freckie/edgesched/pkg/util"
 	topologyv1alpha1 "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/apis/topology/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/util"
 )
 
 const (

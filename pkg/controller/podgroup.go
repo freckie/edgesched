@@ -41,11 +41,11 @@ import (
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog/v2"
 
-	schedv1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	schedclientset "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	schedinformer "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/scheduling/v1alpha1"
-	schedlister "sigs.k8s.io/scheduler-plugins/pkg/generated/listers/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/util"
+	schedv1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	schedclientset "github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	schedinformer "github.com/freckie/edgesched/pkg/generated/informers/externalversions/scheduling/v1alpha1"
+	schedlister "github.com/freckie/edgesched/pkg/generated/listers/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/util"
 )
 
 // PodGroupController is a controller that process pod groups using provided Handler interface

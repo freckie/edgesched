@@ -34,8 +34,8 @@ import (
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 	imageutils "k8s.io/kubernetes/test/utils/image"
 
-	"sigs.k8s.io/scheduler-plugins/pkg/noderesources"
-	"sigs.k8s.io/scheduler-plugins/test/util"
+	"github.com/freckie/edgesched/pkg/noderesources"
+	"github.com/freckie/edgesched/test/util"
 )
 
 func TestAllocatablePlugin(t *testing.T) {

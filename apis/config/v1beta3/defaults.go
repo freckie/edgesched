@@ -151,3 +151,10 @@ func SetDefaults_NodeResourceTopologyMatchArgs(obj *NodeResourceTopologyMatchArg
 func SetDefaults_PreemptionTolerationArgs(obj *PreemptionTolerationArgs) {
 	k8sschedulerconfigv1beta3.SetDefaults_DefaultPreemptionArgs((*schedulerconfigv1beta3.DefaultPreemptionArgs)(obj))
 }
+
+// SetDefaults_EdgeScoringArgs sets the default parameter for EdgeScoringArgs
+func SetDefaults_EdgeScoringArgs(args *EdgeScoringArgs) {
+	if args.Targets == nil {
+		args.Targets = make([]EdgeScoringTarget, 0)
+	}
+}

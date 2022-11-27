@@ -31,9 +31,9 @@ import (
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	"k8s.io/klog/v2"
 
-	"sigs.k8s.io/scheduler-plugins/pkg/controller"
-	schedclientset "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	schedformers "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions"
+	"github.com/freckie/edgesched/pkg/controller"
+	schedclientset "github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	schedformers "github.com/freckie/edgesched/pkg/generated/informers/externalversions"
 )
 
 func newConfig(kubeconfig, master string, inCluster bool) (*restclient.Config, error) {

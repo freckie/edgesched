@@ -31,12 +31,12 @@ import (
 	frameworkruntime "k8s.io/kubernetes/pkg/scheduler/framework/runtime"
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 
-	_ "sigs.k8s.io/scheduler-plugins/apis/config/scheme"
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/coscheduling/core"
-	fakepgclientset "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned/fake"
-	pgformers "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions"
-	testutil "sigs.k8s.io/scheduler-plugins/test/util"
+	_ "github.com/freckie/edgesched/apis/config/scheme"
+	"github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/coscheduling/core"
+	fakepgclientset "github.com/freckie/edgesched/pkg/generated/clientset/versioned/fake"
+	pgformers "github.com/freckie/edgesched/pkg/generated/informers/externalversions"
+	testutil "github.com/freckie/edgesched/test/util"
 )
 
 func TestLess(t *testing.T) {

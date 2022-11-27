@@ -22,8 +22,8 @@ import (
 	"net/http"
 
 	rest "k8s.io/client-go/rest"
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned/scheme"
+	v1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/generated/clientset/versioned/scheme"
 )
 
 type SchedulingV1alpha1Interface interface {

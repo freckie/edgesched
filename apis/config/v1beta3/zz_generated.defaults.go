@@ -30,6 +30,7 @@ import (
 // All generated defaulters are covering - they call all nested defaulters.
 func RegisterDefaults(scheme *runtime.Scheme) error {
 	scheme.AddTypeDefaultingFunc(&CoschedulingArgs{}, func(obj interface{}) { SetObjectDefaults_CoschedulingArgs(obj.(*CoschedulingArgs)) })
+	scheme.AddTypeDefaultingFunc(&EdgeScoringArgs{}, func(obj interface{}) { SetObjectDefaults_EdgeScoringArgs(obj.(*EdgeScoringArgs)) })
 	scheme.AddTypeDefaultingFunc(&LoadVariationRiskBalancingArgs{}, func(obj interface{}) {
 		SetObjectDefaults_LoadVariationRiskBalancingArgs(obj.(*LoadVariationRiskBalancingArgs))
 	})
@@ -46,6 +47,10 @@ func RegisterDefaults(scheme *runtime.Scheme) error {
 
 func SetObjectDefaults_CoschedulingArgs(in *CoschedulingArgs) {
 	SetDefaults_CoschedulingArgs(in)
+}
+
+func SetObjectDefaults_EdgeScoringArgs(in *EdgeScoringArgs) {
+	SetDefaults_EdgeScoringArgs(in)
 }
 
 func SetObjectDefaults_LoadVariationRiskBalancingArgs(in *LoadVariationRiskBalancingArgs) {

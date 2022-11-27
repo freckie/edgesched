@@ -46,7 +46,7 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/metrics"
 	"k8s.io/kubernetes/pkg/scheduler/util"
 
-	"sigs.k8s.io/scheduler-plugins/apis/config"
+	"github.com/freckie/edgesched/apis/config"
 )
 
 const (

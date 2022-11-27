@@ -30,9 +30,9 @@ import (
 	topoclientset "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/generated/clientset/versioned"
 	topologyinformers "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/generated/informers/externalversions"
 
-	apiconfig "sigs.k8s.io/scheduler-plugins/apis/config"
-	nrtcache "sigs.k8s.io/scheduler-plugins/pkg/noderesourcetopology/cache"
-	"sigs.k8s.io/scheduler-plugins/pkg/noderesourcetopology/stringify"
+	apiconfig "github.com/freckie/edgesched/apis/config"
+	nrtcache "github.com/freckie/edgesched/pkg/noderesourcetopology/cache"
+	"github.com/freckie/edgesched/pkg/noderesourcetopology/stringify"
 )
 
 func initNodeTopologyInformer(tcfg *apiconfig.NodeResourceTopologyMatchArgs, handle framework.Handle) (nrtcache.Cache, error) {

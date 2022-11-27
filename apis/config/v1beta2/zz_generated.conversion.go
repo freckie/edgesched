@@ -24,13 +24,13 @@ package v1beta2
 import (
 	unsafe "unsafe"
 
+	config "github.com/freckie/edgesched/apis/config"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	conversion "k8s.io/apimachinery/pkg/conversion"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	configv1beta2 "k8s.io/kube-scheduler/config/v1beta2"
 	apisconfig "k8s.io/kubernetes/pkg/scheduler/apis/config"
-	config "sigs.k8s.io/scheduler-plugins/apis/config"
 )
 
 func init() {
@@ -205,7 +205,7 @@ func Convert_config_MetricProviderSpec_To_v1beta2_MetricProviderSpec(in *config.
 }
 
 func autoConvert_v1beta2_NodeResourceTopologyMatchArgs_To_config_NodeResourceTopologyMatchArgs(in *NodeResourceTopologyMatchArgs, out *config.NodeResourceTopologyMatchArgs, s conversion.Scope) error {
-	// WARNING: in.ScoringStrategy requires manual conversion: inconvertible types (*sigs.k8s.io/scheduler-plugins/apis/config/v1beta2.ScoringStrategy vs sigs.k8s.io/scheduler-plugins/apis/config.ScoringStrategy)
+	// WARNING: in.ScoringStrategy requires manual conversion: inconvertible types (*github.com/freckie/edgesched/apis/config/v1beta2.ScoringStrategy vs github.com/freckie/edgesched/apis/config.ScoringStrategy)
 	if err := v1.Convert_Pointer_int64_To_int64(&in.CacheResyncPeriodSeconds, &out.CacheResyncPeriodSeconds, s); err != nil {
 		return err
 	}
@@ -213,7 +213,7 @@ func autoConvert_v1beta2_NodeResourceTopologyMatchArgs_To_config_NodeResourceTop
 }
 
 func autoConvert_config_NodeResourceTopologyMatchArgs_To_v1beta2_NodeResourceTopologyMatchArgs(in *config.NodeResourceTopologyMatchArgs, out *NodeResourceTopologyMatchArgs, s conversion.Scope) error {
-	// WARNING: in.ScoringStrategy requires manual conversion: inconvertible types (sigs.k8s.io/scheduler-plugins/apis/config.ScoringStrategy vs *sigs.k8s.io/scheduler-plugins/apis/config/v1beta2.ScoringStrategy)
+	// WARNING: in.ScoringStrategy requires manual conversion: inconvertible types (github.com/freckie/edgesched/apis/config.ScoringStrategy vs *github.com/freckie/edgesched/apis/config/v1beta2.ScoringStrategy)
 	if err := v1.Convert_int64_To_Pointer_int64(&in.CacheResyncPeriodSeconds, &out.CacheResyncPeriodSeconds, s); err != nil {
 		return err
 	}

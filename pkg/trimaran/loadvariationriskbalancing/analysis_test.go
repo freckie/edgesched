@@ -20,9 +20,9 @@ import (
 	"math"
 	"testing"
 
+	"github.com/freckie/edgesched/pkg/trimaran"
 	"github.com/paypal/load-watcher/pkg/watcher"
 	"github.com/stretchr/testify/assert"
-	"sigs.k8s.io/scheduler-plugins/pkg/trimaran"
 
 	v1 "k8s.io/api/core/v1"
 	st "k8s.io/kubernetes/pkg/scheduler/testing"

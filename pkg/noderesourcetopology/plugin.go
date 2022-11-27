@@ -24,8 +24,8 @@ import (
 	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 
-	apiconfig "sigs.k8s.io/scheduler-plugins/apis/config"
-	nrtcache "sigs.k8s.io/scheduler-plugins/pkg/noderesourcetopology/cache"
+	apiconfig "github.com/freckie/edgesched/apis/config"
+	nrtcache "github.com/freckie/edgesched/pkg/noderesourcetopology/cache"
 
 	topologyapi "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/apis/topology"
 	topologyv1alpha1 "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/apis/topology/v1alpha1"

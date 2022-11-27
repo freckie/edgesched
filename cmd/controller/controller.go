@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/freckie/edgesched/cmd/controller/app"
 	"github.com/spf13/pflag"
-	"sigs.k8s.io/scheduler-plugins/cmd/controller/app"
 )
 
 func main() {

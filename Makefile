@@ -35,6 +35,17 @@ RELEASE_CONTROLLER_IMAGE:=controller:$(RELEASE_VERSION)
 # v20200521-v0.18.800             - automated build for a tag
 VERSION=$(shell echo $(RELEASE_VERSION) | awk -F - '{print $$2}')
 
+SHMSCHED_REGISTRY=ghcr.io/freckie
+SHMSCHED_IMAGE=edgesched
+SHMSCHED_VERSION="$(RELEASE_VERSION)"
+
+.PHONY: edgesched.build
+edgesched.build: clean
+	docker build -f ./build/scheduler/Dockerfile --build-arg ARCH="amd64" --build-arg RELEASE_VERSION="$(SHMSCHED_VERSION)" -t $(SHMSCHED_REGISTRY)/$(SHMSCHED_IMAGE):$(RELEASE_VERSION) .
+	docker tag $(SHMSCHED_REGISTRY)/$(SHMSCHED_IMAGE):$(RELEASE_VERSION) $(SHMSCHED_REGISTRY)/$(SHMSCHED_IMAGE):latest
+	docker push $(SHMSCHED_REGISTRY)/$(SHMSCHED_IMAGE):$(RELEASE_VERSION)
+	docker push $(SHMSCHED_REGISTRY)/$(SHMSCHED_IMAGE):latest
+
 .PHONY: all
 all: build
 

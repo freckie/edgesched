@@ -39,9 +39,9 @@ import (
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 	imageutils "k8s.io/kubernetes/test/utils/image"
 
-	scheconfig "sigs.k8s.io/scheduler-plugins/apis/config"
-	"sigs.k8s.io/scheduler-plugins/pkg/noderesourcetopology"
-	"sigs.k8s.io/scheduler-plugins/test/util"
+	scheconfig "github.com/freckie/edgesched/apis/config"
+	"github.com/freckie/edgesched/pkg/noderesourcetopology"
+	"github.com/freckie/edgesched/test/util"
 
 	topologyv1alpha1 "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/apis/topology/v1alpha1"
 	"github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/generated/clientset/versioned"

@@ -22,6 +22,7 @@ import (
 	"testing"
 	"time"
 
+	testutil "github.com/freckie/edgesched/test/util"
 	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
@@ -33,7 +34,6 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/framework/plugins/queuesort"
 	frameworkruntime "k8s.io/kubernetes/pkg/scheduler/framework/runtime"
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
-	testutil "sigs.k8s.io/scheduler-plugins/test/util"
 )
 
 func TestPodState(t *testing.T) {

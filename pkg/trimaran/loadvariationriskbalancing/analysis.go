@@ -19,9 +19,9 @@ package loadvariationriskbalancing
 import (
 	"math"
 
+	"github.com/freckie/edgesched/pkg/trimaran"
 	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
-	"sigs.k8s.io/scheduler-plugins/pkg/trimaran"
 )
 
 /*

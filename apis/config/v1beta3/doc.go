@@ -15,11 +15,11 @@ limitations under the License.
 */
 
 // +k8s:deepcopy-gen=package
-// +k8s:conversion-gen=sigs.k8s.io/scheduler-plugins/apis/config
+// +k8s:conversion-gen=github.com/freckie/edgesched/apis/config
 // +k8s:defaulter-gen=TypeMeta
-// +k8s:defaulter-gen-input=sigs.k8s.io/scheduler-plugins/apis/config/v1beta3
+// +k8s:defaulter-gen-input=github.com/freckie/edgesched/apis/config/v1beta3
 
 // +groupName=kubescheduler.config.k8s.io
 
 // Package v1beta3 is the v1beta3 version of the API.
-package v1beta3 // import "sigs.k8s.io/scheduler-plugins/apis/config/v1beta3"
+package v1beta3 // import "github.com/freckie/edgesched/apis/config/v1beta3"

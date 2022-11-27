@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
+	v1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
 )
 
 // PodGroupReconciler reconciles a PodGroup object

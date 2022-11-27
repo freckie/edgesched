@@ -27,9 +27,9 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
-	versioned "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	internalinterfaces "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/internalinterfaces"
-	scheduling "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions/scheduling"
+	versioned "github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	internalinterfaces "github.com/freckie/edgesched/pkg/generated/informers/externalversions/internalinterfaces"
+	scheduling "github.com/freckie/edgesched/pkg/generated/informers/externalversions/scheduling"
 )
 
 // SharedInformerOption defines the functional option type for SharedInformerFactory.

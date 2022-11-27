@@ -35,14 +35,14 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/apis/config"
 	"k8s.io/kubernetes/pkg/scheduler/apis/config/testing/defaults"
 
-	"sigs.k8s.io/scheduler-plugins/pkg/capacityscheduling"
-	"sigs.k8s.io/scheduler-plugins/pkg/coscheduling"
-	"sigs.k8s.io/scheduler-plugins/pkg/noderesources"
-	"sigs.k8s.io/scheduler-plugins/pkg/noderesourcetopology"
-	"sigs.k8s.io/scheduler-plugins/pkg/podstate"
-	"sigs.k8s.io/scheduler-plugins/pkg/qos"
-	"sigs.k8s.io/scheduler-plugins/pkg/trimaran/loadvariationriskbalancing"
-	"sigs.k8s.io/scheduler-plugins/pkg/trimaran/targetloadpacking"
+	"github.com/freckie/edgesched/pkg/capacityscheduling"
+	"github.com/freckie/edgesched/pkg/coscheduling"
+	"github.com/freckie/edgesched/pkg/noderesources"
+	"github.com/freckie/edgesched/pkg/noderesourcetopology"
+	"github.com/freckie/edgesched/pkg/podstate"
+	"github.com/freckie/edgesched/pkg/qos"
+	"github.com/freckie/edgesched/pkg/trimaran/loadvariationriskbalancing"
+	"github.com/freckie/edgesched/pkg/trimaran/targetloadpacking"
 )
 
 func TestSetup(t *testing.T) {

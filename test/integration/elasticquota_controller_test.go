@@ -37,13 +37,13 @@ import (
 	fwkruntime "k8s.io/kubernetes/pkg/scheduler/framework/runtime"
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling"
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	schedv1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/capacityscheduling"
-	"sigs.k8s.io/scheduler-plugins/pkg/controller"
-	"sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	schedformers "sigs.k8s.io/scheduler-plugins/pkg/generated/informers/externalversions"
+	"github.com/freckie/edgesched/apis/scheduling"
+	"github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	schedv1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/capacityscheduling"
+	"github.com/freckie/edgesched/pkg/controller"
+	"github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	schedformers "github.com/freckie/edgesched/pkg/generated/informers/externalversions"
 )
 
 func TestElasticController(t *testing.T) {

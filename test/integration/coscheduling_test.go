@@ -36,12 +36,12 @@ import (
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 	imageutils "k8s.io/kubernetes/test/utils/image"
 
-	schedconfig "sigs.k8s.io/scheduler-plugins/apis/config"
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling"
-	"sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	"sigs.k8s.io/scheduler-plugins/pkg/coscheduling"
-	"sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned"
-	"sigs.k8s.io/scheduler-plugins/test/util"
+	schedconfig "github.com/freckie/edgesched/apis/config"
+	"github.com/freckie/edgesched/apis/scheduling"
+	"github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	"github.com/freckie/edgesched/pkg/coscheduling"
+	"github.com/freckie/edgesched/pkg/generated/clientset/versioned"
+	"github.com/freckie/edgesched/test/util"
 )
 
 func TestCoschedulingPlugin(t *testing.T) {

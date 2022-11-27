@@ -156,3 +156,19 @@ type NodeResourceTopologyMatchArgs struct {
 
 // PreemptionTolerationArgs reuses DefaultPluginArgs.
 type PreemptionTolerationArgs schedconfig.DefaultPreemptionArgs
+
+type EdgeScoringTarget struct {
+	NodeName string
+	IP       string
+	Port     string
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// EdgeScoringArgs configures EdgeScoring plugin
+type EdgeScoringArgs struct {
+	metav1.TypeMeta
+
+	// List of targets
+	Targets []EdgeScoringTarget
+}

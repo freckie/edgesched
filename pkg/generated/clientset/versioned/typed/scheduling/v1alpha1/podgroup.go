@@ -26,8 +26,8 @@ import (
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
 	rest "k8s.io/client-go/rest"
-	v1alpha1 "sigs.k8s.io/scheduler-plugins/apis/scheduling/v1alpha1"
-	scheme "sigs.k8s.io/scheduler-plugins/pkg/generated/clientset/versioned/scheme"
+	v1alpha1 "github.com/freckie/edgesched/apis/scheduling/v1alpha1"
+	scheme "github.com/freckie/edgesched/pkg/generated/clientset/versioned/scheme"
 )
 
 // PodGroupsGetter has a method to return a PodGroupInterface.

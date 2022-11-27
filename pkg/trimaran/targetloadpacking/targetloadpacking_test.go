@@ -26,9 +26,9 @@ import (
 	"strconv"
 	"testing"
 
+	testutil "github.com/freckie/edgesched/test/util"
 	"github.com/paypal/load-watcher/pkg/watcher"
 	"github.com/stretchr/testify/assert"
-	testutil "sigs.k8s.io/scheduler-plugins/test/util"
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
@@ -43,8 +43,8 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/framework/runtime"
 	st "k8s.io/kubernetes/pkg/scheduler/testing"
 
-	pluginConfig "sigs.k8s.io/scheduler-plugins/apis/config"
-	"sigs.k8s.io/scheduler-plugins/apis/config/v1beta2"
+	pluginConfig "github.com/freckie/edgesched/apis/config"
+	"github.com/freckie/edgesched/apis/config/v1beta2"
 )
 
 var _ framework.SharedLister = &testSharedLister{}
