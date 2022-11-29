@@ -23,8 +23,8 @@ const Name = "EdgeScoring"
 
 var _ = framework.ScorePlugin(&EdgeScoring{})
 var alpha float64 = 0.5
-var theta2 float64 = 0.8
-var theta1 float64 = 0.75
+var theta2 float64 = 0.7
+var theta1 float64 = 0.4
 
 func New(obj runtime.Object, h framework.Handle) (framework.Plugin, error) {
 	args, ok := obj.(*config.EdgeScoringArgs)
